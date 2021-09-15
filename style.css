@@ -1,0 +1,164 @@
+*, *::after, *::before
+{
+    box-sizing: border-box;
+}
+:root{
+    --cell-size:100px;
+    --mark-size:calc(var(--cell-size)*0.8);
+}
+
+body{
+    margin: 0;
+    background-color:black;
+}
+.gamename{
+    background-color:chartreuse;
+    
+    margin-left: 10%;
+    font-size: 3em;
+    margin-right: 10%;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-decoration-color:brown;
+    text-shadow:cornflowerblue;
+}
+
+.scoredisplay{
+    margin-left: 8%;
+    
+}
+.playingarea{
+    width:80vw;
+    height:80vh;
+    display:grid;
+    
+    justify-content:center;
+    align-content:center;
+    justify-items:center;
+    align-items:center;
+    grid-template-columns: auto auto auto;
+}
+.cell{
+    width:var(--cell-size);
+    height:var(--cell-size);
+    position:relative;
+    background-color:black;
+    border:1px solid blue;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor: pointer;
+}
+.cell:nth-child(1),
+.cell:nth-child(2),
+.cell:nth-child(3){
+    border-top:none;
+
+}
+.cell:nth-child(1),
+.cell:nth-child(4),
+.cell:nth-child(7){
+    border-left:none;
+}
+.cell:nth-child(7),
+.cell:nth-child(8),
+.cell:nth-child(9){
+    border-bottom: none;
+}
+.cell:nth-child(3),
+.cell:nth-child(6),
+.cell:nth-child(9)
+{
+    border-right: none;
+}
+.cell.x,
+.cell.o{
+    cursor:not-allowed;
+}
+
+.cell.x::before,
+.cell.x::after,
+.cell.o::before{
+    background-color:hotpink;
+}
+
+
+
+.playingarea.x .cell:not(.x):not(.o):hover::before,
+.playingarea.x .cell:not(.x):not(.o):hover::after,
+.playingarea.o .cell:not(.x):not(.o):hover::before{
+background-color: purple;
+}
+
+
+.cell.x::before,
+.cell.x::after,
+.playingarea.x .cell:not(.x):not(.o):hover::before,
+.playingarea.x .cell:not(.x):not(.o):hover::after
+{
+    content:'';
+    position:absolute;
+     width:calc(var(--mark-size)* .2);
+     height:var(--mark-size);
+     
+     
+}
+
+.cell.x::before,
+.playingarea.x .cell:not(.x):not(.o):hover::before{
+    transform: rotate(30deg);
+}
+.cell.x::after,
+.playingarea.x .cell:not(.x):not(.o):hover::after
+{
+    transform: rotate(-30deg);
+}
+
+
+.cell.o::before,
+.cell.o::after,
+.playingarea.o .cell:not(.x):not(.o):hover::before,
+.playingarea.o .cell:not(.x):not(.o):hover::after
+{
+    content:'';
+    position:absolute;
+     width:var(--mark-size);
+     height:var(--mark-size);
+     border-radius: 50px;
+  
+     
+}
+.cell.o::before,
+.playingarea.o .cell:not(.x):not(.o):hover::before{
+    width:var(--mark-size);
+    height:var(--mark-size);
+    
+}
+
+.cell.o::after,
+.playingarea.o .cell:not(.x):not(.o):hover::after{
+    width:calc(var(--mark-size)*0.6);
+    height:calc(var(--mark-size)*.6);
+    background-color: black;
+}
+.gameended{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:darkslategrey;
+    justify-content:center;
+    align-items: center;
+    font-size:5rem;
+}
+.gameended button{
+    font-size:3rem;
+    background-color: gray;
+    border:1px solid purple;
+    padding: .25em .5em;
+    cursor:pointer;
+}
+.gameended.show{
+    display:flex;
+}

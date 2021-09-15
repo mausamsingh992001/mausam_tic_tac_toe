@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+    <title>mausam_singh tic tac toe</title>
+</head>
+<body>
+    <div class="gamename"><b>TIC TAC TOE<sub><em>created by</em>
+         <b>MAUSAM SINGH</b></sub></b></div>
+         <div class="score">
+             <table  class="scoredisplay" font-weight-bold>
+             <tr style="margin-left: 50%;"><td style="color:white; font-size: 30px;">Player X won(no of games):</td><td>
+                 <input type="text" name="txtplayerxscore" id='playerxscore'
+                 style="width:200px;text-align:right;font-size:30px ;
+                 background-color: mediumvioletred;" value=0>
+             </td></tr>
+             <tr style="margin-left: 5%;"><td style="color:white;font-size: 30px;">Player O won(no of games):</td><td>
+                <input type="text" name="txtplayeroscore" id='playeroscore'
+                style="width:200px;text-align:right;font-size: 30px;
+                background-color: olivedrab;" value=0>
+            </td></tr>
+            <tr style="margin-left: 5%;"><td style="color:white;font-size: 30px;">no of games played:</td><td>
+                <input type="text" name="txtnoofgames" id="noofgames"
+                style="width:200px;text-align:right;font-size: 30px;
+                background-color: mediumturquoise;" value=0>
+            </td></tr>
+             </table>
+         </div>
+         <div class="start" style="margin-left: 5%;color:white;font-size: 30px;">Do
+             you want to start with X shape or O shape</div>
+             <button id="xshape" style="margin-left: 5%;background-color:maroon;;font-size: 30px;">X</button>
+             <button id="oshape" style="margin-left: 5%;background-color: blueviolet;font-size: 30px;">O</button>
+        <div style="color:white;font-size:20px;">(from next game if you don't select any shape then game will start with x shape(because i want to do so!!)
+             but please choose any shape for your first game)
+        </div>
+    <div class="playingarea " id="playingarea">
+        <div class="cell" cell-shape></div>
+        <div class="cell" cell-shape></div>
+        <div class="cell" cell-shape></div>
+        <div class="cell" cell-shape></div>
+        <div class="cell" cell-shape></div>
+        <div class="cell" cell-shape></div>
+        <div class="cell" cell-shape></div>
+        <div class="cell" cell-shape></div>
+        <div class="cell" cell-shape></div>
+    </div>
+    
+    <div class="gameended  " id="gameended">
+        <div game_ended_text></div>
+        <button id="playagainbutton"><em>playagain</em></button>
+    </div>
+</body>
+</html>
